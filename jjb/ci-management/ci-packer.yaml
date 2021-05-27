@@ -1,4 +1,4 @@
- - project:
+- project:
     name: packer-verify
     jobs:
       - gerrit-packer-verify
