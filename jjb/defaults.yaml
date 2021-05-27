@@ -53,7 +53,7 @@
     submodule-disable: false
 
     # Jenkins
-    jenkins-ssh-credential: "jenkins"
+    jenkins-ssh-credential: "jenkins-ssh"
     jenkins-ssh-release-credential: "magma-release"
 
     # SonarCloud
