@@ -1,0 +1,62 @@
+---
+# GLOBAL jenkins defaults
+
+- defaults:
+    name: global
+
+    github-org: magma
+    git-clone-url: "git@github.com:"
+    git-url: https://github.com
+    github-url: https://github.com
+    # default pr_whitelist to some LF RelEng staff
+    github_pr_whitelist:
+      - jwagantall
+      - fpalumbo-phinx
+    # default pr_admin_list to LF RelEng lead
+    github_pr_admin_list:
+      - jwagantall
+
+    build-days-to-keep: 30
+    # the below discarder values are hard coded into the macro and are only here
+    # for documentation purposes
+    build-num-to-keep: 40
+    build-artifact-days-to-keep: -1
+    build-artifact-num-to-keep: 5
+
+    failure-notification: "releng+magma@linuxfoundation.org"
+    failure-notification-prefix: "[releng]"
+
+    # lf-infra defaults
+    lftools-version: <1.0.0
+
+    # packer_version
+    packer-version: 1.7.2
+
+    # default gerrit server definition
+    server-name: "Primary"
+    gerrit-server-name: "Primary"
+
+    # Java
+    jdk: ""
+
+    # Timeout in minutes
+    build-timeout: 90
+    build-node: ubuntu1804-docker-8c-8g
+
+    archive-artifacts: ""
+
+    # Set default maven version used for everything
+    maven-version: "mvn33"
+
+    # git submodule attributes
+    submodule-recursive: true
+    submodule-disable: false
+
+    # Jenkins
+    jenkins-ssh-credential: "jenkins-ssh"
+    jenkins-ssh-release-credential: "magma-release"
+
+    # SonarCloud
+    sonarcloud_project_organization: magma
+    sonarcloud_api_token: 846aa184392cd5f78dc3f073ace0a708198b3bb3
+    sonar_mvn_goal: "org.sonarsource.scanner.maven:sonar-maven-plugin:3.8.0.2131:sonar"
