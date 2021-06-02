@@ -1,3 +1,10 @@
+---
+- project:
+    name: packer-project-view
+    project-name: packer
+    views:
+      - project-view
+
 - project:
     name: packer-verify
     jobs:
