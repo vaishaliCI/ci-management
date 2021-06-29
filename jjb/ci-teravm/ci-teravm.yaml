@@ -1,0 +1,69 @@
+- job-template:
+    name: "LF-teravm"
+    node: "ubuntu-dev-teravm"
+    build-args: ""
+
+    wrappers:
+      - lf-infra-wrappers:
+          build-timeout: "{build-timeout}"
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
+    triggers:
+      - github-pull-request:
+          trigger-phrase: "^(remerge)$"
+          only-trigger-phrase: true
+          status-context: "Magma AGW node merge"
+          permit-all: true
+          github-hooks: true
+          white-list-target-branches:
+            - "master"
+    builders:
+      - shell:  fab run_3gpp_tests:setup_2
+
+- publisher:
+    name: teravm-jjb-email-notification
+    publishers:
+      - email:
+      	  recipients: "vagrawal@fb.com"
+    publishers:
+      - email-ext:
+          recipients: "vagrawal@fb.com"
+          reply-to: "vagrawal@fb.com"
+          content-type: default
+          subject: "{email-prefix} $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+          body: |
+            $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+            Please refer to the logs server URL for console logs when possible
+            and use the Jenkins Build URL as a last resort.
+            Jenkins Build URL:
+            $BUILD_URL
+          unstable: true
+          fixed: true
+          always: true
+          attachments: **/reports/*
+          send-to:
+            - recipients
+    publishers:
+      - slack:
+      	  team-domain: 'magmacore'
+          auth-token: 'DPKFwmiCxQ9VPq95liGUCEwk'
+          auth-token-id: 'magma-test'
+          #build-server-url: 'http://localhost:8081'
+          room: '#magma-test'
+          notify-start: True
+          notify-success: True
+          notify-aborted: True
+          notify-not-built: True
+          #notify-unstable: True
+          notify-failure: True
+          #notify-every-failure: True
+          #notify-back-to-normal: True
+          #notify-repeated-failure: True
+          #notify-regression: True
+          #include-test-summary: True
+          #include-failed-tests: True
+          commit-info-choice: 'AUTHORS_AND_TITLES'
+          include-custom-message: True
+          custom-message: 'A custom message.'
+          #auth-token-credential-id: yourauthtoken
+          #bot-user: True
+          base-url: https://hooks.slack.com/services/T018QE9RWKT/B0275PGJ01K/
