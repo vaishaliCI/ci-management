@@ -1,0 +1,19 @@
+- project:
+    name: teravm-project-view
+    project-name: teravm
+    views:
+      - project-view
+- project:
+    name: teravm-jobs
+    jobs:
+      - "{project-name}-LF-teravm"
+    project: teravm
+    project-name: teravm
+    archive-artifacts: "**/*.log"
+    branch: main
+    build-timeout: 60
+    build-node: static-ubuntu-dev-teravm
+    jjb-version: 3.5.0
+    # configure the gerrit-jjb-verify job
+    build-node-label-check: true
+    build-node-label-list: "ci-teravm"

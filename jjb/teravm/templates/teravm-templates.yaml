@@ -1,5 +1,5 @@
 - job-template:
-    name: "LF-teravm"
+    name: "{project-name}-LF-teravm"
     node: "ubuntu-dev-teravm"
     build-args: ""
 
@@ -17,14 +17,13 @@
           white-list-target-branches:
             - "master"
     builders:
-      - shell:  fab run_3gpp_tests:setup_2
+      - shell: fab run_3gpp_tests:setup_2
 
 - publisher:
     name: teravm-jjb-email-notification
     publishers:
       - email:
-      	  recipients: "vagrawal@fb.com"
-    publishers:
+          recipients: "vagrawal@fb.com"
       - email-ext:
           recipients: "vagrawal@fb.com"
           reply-to: "vagrawal@fb.com"
@@ -33,22 +32,20 @@
           body: |
             $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
             Please refer to the logs server URL for console logs when possible
-            and use the Jenkins Build URL as a last resort.
+            and use test the Jenkins Build URL as a last resort.
             Jenkins Build URL:
             $BUILD_URL
           unstable: true
           fixed: true
           always: true
-          attachments: **/reports/*
+          attachments: "**/reports/*"
           send-to:
             - recipients
-    publishers:
       - slack:
-      	  team-domain: 'magmacore'
-          auth-token: 'DPKFwmiCxQ9VPq95liGUCEwk'
-          auth-token-id: 'magma-test'
-          #build-server-url: 'http://localhost:8081'
-          room: '#magma-test'
+          team-domain: "magmacore"
+          auth-token: "DPKFwmiCxQ9VPq95liGUCEwk"
+          auth-token-id: "magma-test"
+          room: "#magma-test"
           notify-start: True
           notify-success: True
           notify-aborted: True
@@ -61,9 +58,10 @@
           #notify-regression: True
           #include-test-summary: True
           #include-failed-tests: True
-          commit-info-choice: 'AUTHORS_AND_TITLES'
+          commit-info-choice: "AUTHORS_AND_TITLES"
           include-custom-message: True
-          custom-message: 'A custom message.'
+          custom-message: "A teravm integration custom message."
           #auth-token-credential-id: yourauthtoken
           #bot-user: True
           base-url: https://hooks.slack.com/services/T018QE9RWKT/B0275PGJ01K/
+          #base-url: https://hooks.slack.com/services/
