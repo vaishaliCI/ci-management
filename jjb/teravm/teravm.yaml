@@ -16,4 +16,4 @@
     jjb-version: 3.5.0
     # configure the gerrit-jjb-verify job
     build-node-label-check: true
-    build-node-label-list: "ci-teravm"
+    build-node-label-list: ""
