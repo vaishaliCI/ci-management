@@ -1,6 +1,6 @@
 - job-template:
     name: "{project-name}-LF-teravm"
-    node: "static-ubuntu-dev-teravm"
+    node: "ci-teravm"
     build-args: ""
 
     wrappers:
