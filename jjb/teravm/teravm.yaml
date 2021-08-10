@@ -3,6 +3,7 @@
     project-name: teravm
     views:
       - project-view
+
 - project:
     name: teravm-jobs
     jobs:
