@@ -12,8 +12,7 @@
     archive-artifacts: "**/*.log"
     branch: main
     build-timeout: 60
-    build-node: ci-teravm
-    #build-node: static-ubuntu-dev-teravm
+    #build-node: ci-teravm
     jjb-version: 3.5.0
     # configure the gerrit-jjb-verify job
     build-node-label-check: true
