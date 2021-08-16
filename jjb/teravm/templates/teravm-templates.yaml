@@ -33,14 +33,12 @@
             $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
             Please refer to the logs server URL for console logs when possible
             and use test the Jenkins Build URL as a last resort.
-            Jenkins Build URL:
-            $BUILD_URL
           unstable: true
           fixed: true
           always: true
           attachments: "**/reports/*"
           send-to:
-            - recipients
+            - "vagrawal@fb.com"
       - slack:
           team-domain: "magmacore"
           auth-token: "DPKFwmiCxQ9VPq95liGUCEwk"
