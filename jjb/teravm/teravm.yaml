@@ -18,7 +18,7 @@
     build-node-label-check: true
     build-node-label-list: "ci-teravm"
 
-publishers:
+- publishers:
   - slack:
       team-domain: 'magmacore'
       auth-token: 'DPKFwmiCxQ9VPq95liGUCEwk'
