@@ -29,7 +29,7 @@
           body: "Daily 4G test results"
           always: true
           send-to:
-            - developers: "vagrawal@fb.com"
+            - developers
       - slack:
           team-domain: "magmacore"
           auth-token: "DpdAwCBHaDyOaCl7wKN4DtZ6"
