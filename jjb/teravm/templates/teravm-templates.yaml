@@ -31,7 +31,8 @@
           fixed: true
           always: true
           attachments: "**/reports/*"
-          send-to: "vagrawal@fb.com"
+          send-to: 
+            - recipients: "vagrawal@fb.com"
       - slack:
           team-domain: "magmacore"
           auth-token: "DpdAwCBHaDyOaCl7wKN4DtZ6"
