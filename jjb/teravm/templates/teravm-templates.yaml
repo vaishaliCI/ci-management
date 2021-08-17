@@ -27,11 +27,9 @@
           content-type: default
           subject: "LF Teravm integration"
           body: "Daily 4G test results"
-          unstable: true
-          fixed: true
           always: true
           send-to:
-            - recipients: "vagrawal@fb.com"
+            - developers: "vagrawal@fb.com"
       - slack:
           team-domain: "magmacore"
           auth-token: "DpdAwCBHaDyOaCl7wKN4DtZ6"
