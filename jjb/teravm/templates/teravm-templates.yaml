@@ -35,7 +35,6 @@
           auth-token: "DpdAwCBHaDyOaCl7wKN4DtZ6"
           auth-token-id: "magma-test"
           room: "#magma-test"
-          notify-start: True
           notify-success: True
           notify-aborted: True
           notify-not-built: True
