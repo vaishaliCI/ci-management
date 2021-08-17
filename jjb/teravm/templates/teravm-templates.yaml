@@ -18,9 +18,6 @@
             - "master"
     builders:
       - shell: fab run_3gpp_tests:setup_2
-
-- publisher:
-    name: teravm-jjb-email-notification
     publishers:
       - email:
           recipients: "vagrawal@fb.com"

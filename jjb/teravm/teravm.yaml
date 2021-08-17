@@ -17,21 +17,3 @@
     # configure the gerrit-jjb-verify job
     build-node-label-check: true
     build-node-label-list: "ci-teravm"
-
-- publishers:
-  - slack:
-      team-domain: "magmacore"
-      auth-token: "DPKFwmiCxQ9VPq95liGUCEwk"
-      auth-token-id: "magma-test"
-      room: "#magma-test"
-      notify-start: True
-      notify-success: True
-      notify-aborted: True
-      notify-not-built: True
-      notify-failure: True
-      include-test-summary: True
-      include-failed-tests: True
-      commit-info-choice: "AUTHORS_AND_TITLES"
-      include-custom-message: True
-      custom-message: "A teravm integration custom message."
-      base-url: https://hooks.slack.com/services/T018QE9RWKT/B0275PGJ01K/
