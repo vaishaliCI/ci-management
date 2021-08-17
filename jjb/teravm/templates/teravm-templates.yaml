@@ -30,7 +30,6 @@
           unstable: true
           fixed: true
           always: true
-          attachments: "**/reports/*"
           send-to:
             - recipients: "vagrawal@fb.com"
       - slack:
