@@ -41,4 +41,4 @@
           notify-failure: True
           commit-info-choice: "AUTHORS_AND_TITLES"
           include-custom-message: True
-          custom-message: "A teravm integration custom message."
+          custom-message: "A teravm integration message."
