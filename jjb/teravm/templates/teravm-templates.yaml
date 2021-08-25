@@ -22,15 +22,17 @@
       - email:
           recipients: "vagrawal@fb.com"
       - email-ext:
-          recipients: "vagrawal@fb.com"
+          recipients: "vagrawal@fb.com","vaishali.agrawal@techmahindra.com"
           reply-to: "vagrawal@fb.com"
           content-type: default
           subject: "LF Teravm integration"
           body: "Daily 4G test results"
+          attach-build-log: false
+          compress-log: false
+          attachments: "*/foo*.log"
           always: true
           send-to:
-            - developers
-            - recipients: "vagrawal@fb.com"
+            - recipents
       - slack:
           team-domain: "magmacore"
           auth-token: "DpdAwCBHaDyOaCl7wKN4DtZ6"
