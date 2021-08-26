@@ -1,9 +1,11 @@
+-job:
+    display-name: 'LF-teravm integration'
+    workspace: /srv/build-area/teravm-LF
+
 - job-template:
     name: "{project-name}-LF-teravm"
     node: "ci-teravm"
     build-args: ""
-    display-name: 'LF-teravm integration'
-    workspace: /srv/build-area/teravm-LF 
 
     wrappers:
       - lf-infra-wrappers:
