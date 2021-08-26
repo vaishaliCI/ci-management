@@ -2,6 +2,8 @@
     name: "{project-name}-LF-teravm"
     node: "ci-teravm"
     build-args: ""
+    display-name: 'LF-teravm integration'
+    workspace: /srv/build-area/teravm-LF 
 
     wrappers:
       - lf-infra-wrappers:
@@ -29,7 +31,7 @@
           body: "Daily 4G test results"
           attach-build-log: false
           compress-log: false
-          attachments: "*/foo*.log"
+          attachments: "*/build*.log"
           always: true
           send-to:
             - recipients
