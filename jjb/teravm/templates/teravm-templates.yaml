@@ -1,7 +1,7 @@
 - job-template:
     name: "{project-name}-LF-teravm"
     node: "ci-teravm"
-    workspace: /srv/build-area/job-name
+    workspace: /home/magma/logs
     build-args: ""
     wrappers:
       - lf-infra-wrappers:
@@ -29,7 +29,7 @@
           body: "Daily 4G test results"
           attach-build-log: false
           compress-log: false
-          attachments: "*/build*.log"
+          attachments: "**/*.txt"
           always: true
           send-to:
             - recipients
