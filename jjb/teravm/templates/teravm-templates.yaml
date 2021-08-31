@@ -2,6 +2,7 @@
     name: "{project-name}-LF-teravm"
     node: "ci-teravm"
     workspace: /home/magma/logs
+    display-name: "LF-TeraVM Integration Test Run"
     build-args: ""
     wrappers:
       - lf-infra-wrappers:
@@ -17,7 +18,7 @@
           white-list-target-branches:
             - "master"
     builders:
-      - shell: cd /home/magma;fab run_3gpp_tests:setup_2
+      - shell: cd /home/magma;fab run_3gpp_tests:setup_2 > /home/magma/logs/log_CI.txt
     publishers:
       - email:
           recipients: "vagrawal@fb.com"
