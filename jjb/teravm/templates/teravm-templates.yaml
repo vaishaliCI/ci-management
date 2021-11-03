@@ -4,6 +4,13 @@
     workspace: /home/magma/logs
     display-name: "LF-TeraVM Integration Test Run"
     build-args: ""
+    scm:
+      - git:
+          url: git@github.com:magma/magma.git
+          credentials-id: "jenkins (jenkins-ssh)"
+          branches:
+            - refs/heads/master
+          browser: Auto
     wrappers:
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
