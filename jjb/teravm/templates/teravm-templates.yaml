@@ -1,3 +1,4 @@
+---
 - job-template:
     name: "{project-name}-LF-teravm"
     node: "ci-teravm"
@@ -14,6 +15,7 @@
           submodule-disable: true
           choosing-strategy: default
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
+
     wrappers:
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
