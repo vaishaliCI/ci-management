@@ -5,12 +5,15 @@
     display-name: "LF-TeraVM Integration Test Run"
     build-args: ""
     scm:
-      - git:
-          url: git@github.com:magma/magma.git
-          credentials-id: "jenkins (jenkins-ssh)"
-          branches:
-            - refs/heads/master
-          browser: Auto
+      - lf-infra-github-scm:
+          url: "https://github.com/magma/magma.git"
+          refspec: ""
+          branch: "refs/heads/{branch}"
+          submodule-recursive: false
+          submodule-timeout: "{submodule-timeout}"
+          submodule-disable: true
+          choosing-strategy: default
+          jenkins-ssh-credential: "{jenkins-ssh-credential}"
     wrappers:
       - lf-infra-wrappers:
           build-timeout: "{build-timeout}"
