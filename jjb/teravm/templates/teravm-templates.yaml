@@ -5,7 +5,7 @@
     display-name: "LF-TeraVM Integration Test Run"
     build-args: ""
     scm:
-      - git:
+      - lf-infra-github-scm:
           url: "git@github.com:magma/magma.git"
           refspec: ""
           branch: "refs/heads/{branch}"
