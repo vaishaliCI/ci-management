@@ -6,7 +6,7 @@
     build-args: ""
     scm:
       - git:
-          url: "https://github.com/magma/magma.git"
+          url: "git@github.com:magma/magma.git"
           refspec: ""
           branch: "refs/heads/{branch}"
           submodule-recursive: false
