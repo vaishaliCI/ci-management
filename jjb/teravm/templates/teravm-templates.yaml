@@ -11,7 +11,7 @@
           refspec: ""
           branch: "refs/heads/master"
           submodule-recursive: false
-          submodule-timeout: 60
+          submodule-timeout: 120
           submodule-disable: true
           choosing-strategy: default
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
@@ -21,14 +21,19 @@
           build-timeout: "{build-timeout}"
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
     triggers:
-      - github-pull-request:
-          trigger-phrase: "^(remerge)$"
-          only-trigger-phrase: true
-          status-context: "Magma AGW node merge"
-          permit-all: true
-          github-hooks: true
-          white-list-target-branches:
-            - "master"
+      - generic-webhook-trigger:
+          post-content-params:
+            - type: JSONPath
+              key: ARTIFACT_NAME
+              value: $.data.name
+            - type: JSONPath
+              key: EVENT_NAME
+              value: $.event_type
+          print-post-content: true
+          print-contrib-var: true
+          cause: Triggered on $ARTIFACT_NAME
+          regex-filter-text: $EVENT_NAME-$ARTIFACT_NAME
+          regex-filter-expression: deployed-magma_.*
     builders:
       - shell: cd /home/magma;fab restart_teravm_agw:setup_2;fab run_3gpp_tests:setup_2 > /home/magma/logs/log_CI.txt
     publishers:
