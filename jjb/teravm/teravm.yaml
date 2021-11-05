@@ -12,6 +12,7 @@
     archive-artifacts: "**/*.log"
     branch: main
     build-timeout: 60
+    submodule-timeout: 120
     #build-node: ci-teravm
     jjb-version: 3.5.0
     # configure the gerrit-jjb-verify job
