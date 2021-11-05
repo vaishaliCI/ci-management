@@ -11,6 +11,7 @@
           refspec: ""
           branch: "refs/heads/master"
           submodule-recursive: false
+          submodule-timeout: 60
           submodule-disable: true
           choosing-strategy: default
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
