@@ -9,9 +9,8 @@
       - lf-infra-github-scm:
           url: "git@github.com:magma/magma.git"
           refspec: ""
-          branch: "refs/heads/{branch}"
+          branch: "refs/heads/master"
           submodule-recursive: false
-          submodule-timeout: "{submodule-timeout}"
           submodule-disable: true
           choosing-strategy: default
           jenkins-ssh-credential: "{jenkins-ssh-credential}"
