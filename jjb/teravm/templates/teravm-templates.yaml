@@ -52,4 +52,5 @@
           notify-failure: True
           commit-info-choice: "AUTHORS_AND_TITLES"
           include-custom-message: True
-          custom-message: "Please click on below G-drive link to view the Daily Magma 4G Regression status report “https://drive.google.com/drive/u/0/folders/1h3rzx_HGO0X1-6q0FDcr1KxQFHVVlcvv”"
+          custom-message: "Please click on below G-drive link to view the 
+                           Daily Magma 4G Regression status report “https://drive.google.com/drive/u/0/folders/1h3rzx_HGO0X1-6q0FDcr1KxQFHVVlcvv”"
