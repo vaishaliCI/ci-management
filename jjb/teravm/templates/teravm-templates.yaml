@@ -2,7 +2,7 @@
 - job-template:
     name: "{project-name}-LF-teravm"
     node: "ci-teravm"
-    workspace: /home/magma/logs
+    workspace: /home/magma/logs/test_results
     display-name: "LF-TeraVM Integration Test Run"
     build-args: ""
 
@@ -25,7 +25,7 @@
           regex-filter-text: $EVENT_NAME-$ARTIFACT_NAME
           regex-filter-expression: deployed-magma_.*
     builders:
-      - shell: cd /home/magma;sh upgrade.sh
+      - shell: cd /home/magma;sudo sh upgrade.sh
     publishers:
       - email:
           recipients: "vagrawal@fb.com"
@@ -52,4 +52,5 @@
           notify-failure: True
           commit-info-choice: "AUTHORS_AND_TITLES"
           include-custom-message: True
-          custom-message: "A teravm integration message."
+          custom-message: "Please click on below G-drive link to view the Daily Magma 4G Regression status report
+          “https://drive.google.com/drive/u/0/folders/1h3rzx_HGO0X1-6q0FDcr1KxQFHVVlcvv”"
